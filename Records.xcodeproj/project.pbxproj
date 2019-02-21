@@ -28,9 +28,8 @@
 		DD0D8F7A212861DD00FEC504 /* SimulatedRecordGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8F79212861DD00FEC504 /* SimulatedRecordGateway.swift */; };
 		DD0D8F7C212873AE00FEC504 /* RecordListComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8F7B212873AE00FEC504 /* RecordListComposer.swift */; };
 		DD0D8F8E212AC39000FEC504 /* RecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8F8D212AC39000FEC504 /* RecordListView.swift */; };
-		DD0D8F90212AC7BA00FEC504 /* RecordListInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8F8F212AC7BA00FEC504 /* RecordListInteractorImpl.swift */; };
+		DD0D8F90212AC7BA00FEC504 /* RecordListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8F8F212AC7BA00FEC504 /* RecordListInteractor.swift */; };
 		DD0D8F9C212B292500FEC504 /* RecordGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8F9B212B292500FEC504 /* RecordGateway.swift */; };
-		DD0D8FA2212B2A0900FEC504 /* RecordListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8FA1212B2A0900FEC504 /* RecordListInteractor.swift */; };
 		DD0D8FAC212C9BDD00FEC504 /* Signal+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8FAB212C9BDD00FEC504 /* Signal+Driver.swift */; };
 		DD0D8FB321301B1F00FEC504 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8FB221301B1F00FEC504 /* UIImage+Color.swift */; };
 		DD0D8FB521301B5000FEC504 /* RecordToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0D8FB421301B5000FEC504 /* RecordToggleView.swift */; };
@@ -83,9 +82,8 @@
 		DD0D8F79212861DD00FEC504 /* SimulatedRecordGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedRecordGateway.swift; sourceTree = "<group>"; };
 		DD0D8F7B212873AE00FEC504 /* RecordListComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListComposer.swift; sourceTree = "<group>"; };
 		DD0D8F8D212AC39000FEC504 /* RecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListView.swift; sourceTree = "<group>"; };
-		DD0D8F8F212AC7BA00FEC504 /* RecordListInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListInteractorImpl.swift; sourceTree = "<group>"; };
+		DD0D8F8F212AC7BA00FEC504 /* RecordListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListInteractor.swift; sourceTree = "<group>"; };
 		DD0D8F9B212B292500FEC504 /* RecordGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordGateway.swift; sourceTree = "<group>"; };
-		DD0D8FA1212B2A0900FEC504 /* RecordListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListInteractor.swift; sourceTree = "<group>"; };
 		DD0D8FAB212C9BDD00FEC504 /* Signal+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Signal+Driver.swift"; sourceTree = "<group>"; };
 		DD0D8FB221301B1F00FEC504 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		DD0D8FB421301B5000FEC504 /* RecordToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordToggleView.swift; sourceTree = "<group>"; };
@@ -183,8 +181,7 @@
 				5D8F648A220E46F90057184A /* Record.swift */,
 				DD0D8F9B212B292500FEC504 /* RecordGateway.swift */,
 				5D5870DE22178CDD007AB7AC /* RecordListAction.swift */,
-				DD0D8FA1212B2A0900FEC504 /* RecordListInteractor.swift */,
-				DD0D8F8F212AC7BA00FEC504 /* RecordListInteractorImpl.swift */,
+				DD0D8F8F212AC7BA00FEC504 /* RecordListInteractor.swift */,
 				5D5870E022178CFA007AB7AC /* RecordListState.swift */,
 			);
 			path = Domain;
@@ -333,9 +330,8 @@
 				DD0D8F7C212873AE00FEC504 /* RecordListComposer.swift in Sources */,
 				5D5870E122178CFA007AB7AC /* RecordListState.swift in Sources */,
 				5D5870DF22178CDD007AB7AC /* RecordListAction.swift in Sources */,
-				DD0D8FA2212B2A0900FEC504 /* RecordListInteractor.swift in Sources */,
 				DD0D8F50212852DA00FEC504 /* AppDelegate.swift in Sources */,
-				DD0D8F90212AC7BA00FEC504 /* RecordListInteractorImpl.swift in Sources */,
+				DD0D8F90212AC7BA00FEC504 /* RecordListInteractor.swift in Sources */,
 				DD0D8F8E212AC39000FEC504 /* RecordListView.swift in Sources */,
 				DD0D8FB521301B5000FEC504 /* RecordToggleView.swift in Sources */,
 			);
