@@ -14,24 +14,37 @@ public final class RecordListInteractorImpl: RecordListInteractor {
     }
     
     public func start(actions: Signal<RecordListAction>) -> Driver<RecordListState> {
+        let state = BehaviorRelay(value: RecordListState.initial)
         return actions
             .startWith(.reload)
+            .withLatestFrom(state.asSignal(), resultSelector: { ($0, $1) })
             .flatMap(handleAction)
             .scan(RecordListState.initial, accumulator: RecordListState.reduce)
-            .asDriver()
+            .do(onNext: state.accept)
+            .asDriver(onErrorDriveWith: .empty())
     }
     
-    private func handleAction(_ action: RecordListAction) -> Signal<RecordListState.Mutation> {
+    private func handleAction(
+        _ action: RecordListAction,
+        state: RecordListState
+    ) -> Signal<RecordListState.Mutation> {
         switch action {
         case .toggle:
-            return toggleRecord()
+            return state.currentRecord == nil ? startRecord() : stopRecord()
         case .reload:
             return fetchRecords()
         }
     }
     
-    private func toggleRecord() -> Signal<RecordListState.Mutation> {
-        return gateway.toggleRecord()
+    private func startRecord() -> Signal<RecordListState.Mutation> {
+        return gateway.startRecord()
+            .andThen(fetchRecords().asObservable())
+            .startWith(RecordListState.Mutation.loading)
+            .asSignal(onErrorRecover: { .just(RecordListState.Mutation.failure($0)) })
+    }
+    
+    private func stopRecord() -> Signal<RecordListState.Mutation> {
+        return gateway.stopRecord()
             .andThen(fetchRecords().asObservable())
             .startWith(RecordListState.Mutation.loading)
             .asSignal(onErrorRecover: { .just(RecordListState.Mutation.failure($0)) })

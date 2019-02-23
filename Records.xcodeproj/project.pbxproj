@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D124BB52220C03B00059923 /* BehaviorRelay+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D124BB42220C03B00059923 /* BehaviorRelay+Signal.swift */; };
 		5D1B852E221217C7000D313D /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1B852D221217C7000D313D /* RecordCell.swift */; };
 		5D5870DD22178CAC007AB7AC /* RecordListProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5870DC22178CAC007AB7AC /* RecordListProperties.swift */; };
 		5D5870DF22178CDD007AB7AC /* RecordListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5870DE22178CDD007AB7AC /* RecordListAction.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D124BB42220C03B00059923 /* BehaviorRelay+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Signal.swift"; sourceTree = "<group>"; };
 		5D1B852D221217C7000D313D /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		5D5870DC22178CAC007AB7AC /* RecordListProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListProperties.swift; sourceTree = "<group>"; };
 		5D5870DE22178CDD007AB7AC /* RecordListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListAction.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0D8FAB212C9BDD00FEC504 /* Signal+Driver.swift */,
+				5D124BB42220C03B00059923 /* BehaviorRelay+Signal.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				5D8F648D220E4B6A0057184A /* UITableViewCell+Identifier.swift in Sources */,
 				5D5870DD22178CAC007AB7AC /* RecordListProperties.swift in Sources */,
 				DD0D8F7A212861DD00FEC504 /* SimulatedRecordGateway.swift in Sources */,
+				5D124BB52220C03B00059923 /* BehaviorRelay+Signal.swift in Sources */,
 				DD0D8F7C212873AE00FEC504 /* RecordListComposer.swift in Sources */,
 				5D5870E122178CFA007AB7AC /* RecordListState.swift in Sources */,
 				5D5870DF22178CDD007AB7AC /* RecordListAction.swift in Sources */,

@@ -20,7 +20,7 @@ final class RecordListInteractorTest: XCTestCase {
             self.gateway.emitRecords([Fake.finishedRecord])
         }
         scheduler.scheduleAt(221) {
-            self.gateway.completeToggle()
+            self.gateway.completeStart()
         }
         scheduler.scheduleAt(222) {
             self.gateway.emitRecords([Fake.unfinishedRecord, Fake.finishedRecord])
@@ -61,11 +61,16 @@ final class RecordListInteractorTest: XCTestCase {
 }
 
 private final class FakeRecordGateway: RecordGateway {
-    private var toggleSubject = PublishSubject<Void>()
+    private var startSubject = PublishSubject<Void>()
+    private var stopSubject = PublishSubject<Void>()
     private var recordsSubject = PublishSubject<[Record]>()
     
-    func completeToggle() {
-        toggleSubject.onCompleted()
+    func completeStart() {
+        startSubject.onCompleted()
+    }
+    
+    func completeStop() {
+        stopSubject.onCompleted()
     }
     
     func emitRecords(_ records: [Record]) {
@@ -78,11 +83,16 @@ private final class FakeRecordGateway: RecordGateway {
         recordsSubject.onCompleted()
     }
     
-    func toggleRecord() -> Completable {
-        toggleSubject = PublishSubject<Void>()
-        return toggleSubject.ignoreElements()
+    func startRecord() -> Completable {
+        startSubject = PublishSubject<Void>()
+        return startSubject.ignoreElements()
     }
     
+    func stopRecord() -> Completable {
+        stopSubject = PublishSubject<Void>()
+        return stopSubject.ignoreElements()
+    }
+
     func fetchRecords() -> Single<[Record]> {
         recordsSubject = PublishSubject<[Record]>()
         return recordsSubject.asSingle()
