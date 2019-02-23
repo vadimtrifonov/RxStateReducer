@@ -113,6 +113,28 @@ func handleAction(_ action: Action) -> Observable<Mutation> {
 }
 ```
 
+## State introspection
+Check branch [state-feedback](https://github.com/vadimtrifonov/RxStateReducer/tree/state-feedback)
+
+To introspect `State` during `handleAction` it can be fed back into the loop:
+```
+func start(actions: Observable<Action>) -> Observable<State> {
+    let states = BehaviorRelay(value: State.initial)
+    return actions
+        .withLatestFrom(states, resultSelector: { ($0, $1) })
+        .flatMap(handleAction)
+        .scan(states.value, accumulator: reduce)
+        .do(onNext: states.accept)
+}
+```
+
+The function `handleAction` will now take two parameters:
+```
+func handleAction(_ action: Action, state: State) -> Observable<Mutation> {
+    ...
+}
+```
+
 ## Further reading
 
 * [Managing State with RxJava](https://www.youtube.com/watch?v=0IKHxjkgop4)
